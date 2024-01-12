@@ -1,7 +1,9 @@
+import Address from "../value_object/address";
+
 class Customer {
     _id: string;
     _name: string;
-    _address: string = "";
+    _address!: Address;
     _active: boolean = false;
 
     constructor(id: string, name: string, address: string){
@@ -33,5 +35,9 @@ class Customer {
     
     deactivate() {
         this._active = false;
+    }
+
+    set Address(address: Address){
+        this._address = address;
     }
 }
